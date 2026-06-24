@@ -3,313 +3,967 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sravani Girls Hostel & PG</title>
+  <title>Sravani Girls Hostel & PG – Nacharam, Hyderabad</title>
+  <meta name="description" content="Sravani Girls Hostel & PG in Nacharam, Hyderabad. Safe, affordable, hygienic accommodation for women students and working professionals near HMT Nagar, Habsiguda." />
+  <meta name="keywords" content="girls hostel hyderabad, pg for girls nacharam, women hostel habsiguda, girls hostel hmt nagar, affordable pg hyderabad" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
-    /*
-    Color Palette (Adjusted for improved UI)
-    - Primary: #fff8f6 (Soft Creamy White) - For backgrounds
-    - Secondary: #DCC7AA (Soft Apricot/Tan) - For headers and contact section
-    - Accent: #916C41 (Rich Brown) - For highlights, buttons, and text
-    - Text: #3C403D (Dark Grey) - For main body text
-    */
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-      background: #fff8f6;
-      color: #3C403D;
-      line-height: 1.6;
+    /* ── Tokens ─────────────────────────────── */
+    :root {
+      --cream:   #fff8f6;
+      --tan:     #DCC7AA;
+      --tan-lt:  #ece0d1;
+      --brown:   #916C41;
+      --brown-dk:#7a5a31;
+      --text:    #3C403D;
+      --text-lt: #6b7069;
+      --white:   #ffffff;
+      --shadow:  0 4px 20px rgba(60,64,61,0.10);
+      --radius:  14px;
     }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── Sticky Nav ─────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,248,246,0.95);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--tan);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 58px;
+    }
+    .nav-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--brown);
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--brown); }
+    .nav-cta {
+      background: var(--brown);
+      color: var(--white) !important;
+      padding: 7px 18px;
+      border-radius: 50px;
+      font-size: 0.85rem !important;
+    }
+    .nav-cta:hover { background: var(--brown-dk); color: var(--white) !important; }
+
+    /* Mobile nav toggle */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--brown);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ── Header ─────────────────────────────── */
     header {
-      background: #DCC7AA;
+      background: var(--tan);
       text-align: center;
-      padding: 40px 20px;
+      padding: 36px 24px 32px;
     }
     header h1 {
-      margin: 0;
-      font-size: clamp(24px, 5vw, 36px);
-      color: #916C41;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 5vw, 2.6rem);
+      color: var(--brown);
       letter-spacing: 1px;
+      line-height: 1.2;
     }
     header p {
       margin-top: 8px;
-      color: #3C403D;
-      font-size: clamp(16px, 3vw, 20px);
+      color: var(--text);
+      font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+      font-weight: 500;
     }
+    .header-badge {
+      display: inline-block;
+      margin-top: 14px;
+      background: var(--brown);
+      color: var(--white);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 50px;
+    }
+
+    /* ── Hero ───────────────────────────────── */
     .hero {
-      background: url('https://images.unsplash.com/photo-1549552194-03c00445d8b7') center/cover no-repeat;
-      height: 60vh;
-      min-height: 280px;
       position: relative;
+      min-height: 70vh;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 20px;
+      padding: 40px 20px;
+      background: url('https://images.unsplash.com/photo-1549552194-03c00445d8b7?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
     }
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.4); /* lighter overlay */
-      z-index: 0;
+      background: linear-gradient(160deg, rgba(145,108,65,0.55) 0%, rgba(0,0,0,0.45) 100%);
     }
     .hero-content {
       position: relative;
       z-index: 1;
-      max-width: 800px;
-      padding: 30px;
-      border-radius: 16px;
-      background: rgba(255, 248, 246, 0.9); /* soft light box */
-      color: #3C403D;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 680px;
+      background: rgba(255,248,246,0.93);
+      padding: 40px 36px;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
     }
-    .hero h2 {
-      font-size: clamp(2rem, 6vw, 3.5rem);
-      margin: 0 0 10px 0;
+    .hero-eyebrow {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--brown);
+      margin-bottom: 12px;
+    }
+    .hero-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      color: var(--text);
       line-height: 1.2;
-      color: #916C41;
+      margin-bottom: 14px;
     }
-    .hero p {
-      font-size: clamp(1rem, 3vw, 1.5rem);
-      margin-bottom: 25px;
-      color: #3C403D;
+    .hero-content h2 em {
+      color: var(--brown);
+      font-style: normal;
     }
-    .hero .cta-button {
+    .hero-content p {
+      font-size: 1.05rem;
+      color: var(--text-lt);
+      margin-bottom: 28px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
       display: inline-block;
-      background: #916C41;
-      color: white;
-      padding: 12px 30px;
+      background: var(--brown);
+      color: var(--white);
+      padding: 13px 30px;
       border-radius: 50px;
       text-decoration: none;
-      font-size: 1.1rem;
-      font-weight: bold;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: background 0.3s, transform 0.2s;
+      border: 2px solid var(--brown);
+    }
+    .btn-primary:hover { background: var(--brown-dk); border-color: var(--brown-dk); transform: translateY(-2px); }
+    .btn-secondary {
+      display: inline-block;
+      background: transparent;
+      color: var(--brown);
+      padding: 13px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      border: 2px solid var(--brown);
+      transition: background 0.3s, color 0.3s, transform 0.2s;
+    }
+    .btn-secondary:hover { background: var(--brown); color: var(--white); transform: translateY(-2px); }
+
+    /* ── Stats bar ──────────────────────────── */
+    .stats-bar {
+      background: var(--brown);
+      color: var(--white);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+    .stat-item {
+      flex: 1;
+      min-width: 140px;
+      text-align: center;
+      padding: 20px 16px;
+      border-right: 1px solid rgba(255,255,255,0.18);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      display: block;
+    }
+    .stat-label {
+      font-size: 0.78rem;
+      opacity: 0.85;
       letter-spacing: 0.5px;
-      transition: background 0.3s ease, transform 0.3s ease;
     }
-    .hero .cta-button:hover {
-      background: #7a5a31;
-      transform: translateY(-2px);
-    }
+
+    /* ── Section base ───────────────────────── */
     section {
-      padding: 50px 20px;
-      max-width: 1000px;
+      padding: 64px 20px;
+      max-width: 1060px;
       margin: auto;
     }
-    h2 {
+    .section-title {
+      font-family: 'Playfair Display', serif;
       text-align: center;
-      color: #916C41;
-      margin-bottom: 30px;
-      font-size: clamp(22px, 5vw, 30px);
+      color: var(--brown);
+      margin-bottom: 10px;
+      font-size: clamp(1.5rem, 4vw, 2rem);
     }
+    .section-sub {
+      text-align: center;
+      color: var(--text-lt);
+      margin-bottom: 40px;
+      font-size: 1rem;
+    }
+    .divider {
+      width: 48px;
+      height: 3px;
+      background: var(--brown);
+      border-radius: 2px;
+      margin: 12px auto 36px;
+    }
+
+    /* ── Features grid ──────────────────────── */
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 18px;
     }
     .feature {
-      background: #fdfcfb;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: inset 0 2px 4px rgba(0,0,0,0.05), 0 4px 8px rgba(0,0,0,0.05);
+      background: var(--white);
+      padding: 24px 18px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
       text-align: center;
       font-weight: 600;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      font-size: 0.95rem;
+      border-bottom: 3px solid transparent;
+      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
     }
     .feature:hover {
       transform: translateY(-5px);
-      box-shadow: inset 0 2px 4px rgba(0,0,0,0.05), 0 8px 16px rgba(0,0,0,0.1);
+      border-color: var(--brown);
+      box-shadow: 0 8px 24px rgba(145,108,65,0.15);
     }
-    .image-gallery {
+    .feature .feat-icon {
+      font-size: 1.8rem;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    /* ── Pricing ────────────────────────────── */
+    .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
     }
-    .image-gallery img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      border-radius: 12px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .price-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      text-align: center;
+      overflow: hidden;
+      transition: transform 0.25s;
+    }
+    .price-card:hover { transform: translateY(-5px); }
+    .price-card.popular { border: 2px solid var(--brown); }
+    .price-header {
+      background: var(--tan-lt);
+      padding: 18px 12px 14px;
+    }
+    .price-card.popular .price-header { background: var(--brown); color: var(--white); }
+    .price-type {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--brown);
+    }
+    .price-card.popular .price-type { color: var(--white); }
+    .popular-badge {
+      display: inline-block;
+      background: var(--white);
+      color: var(--brown);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 2px 10px;
+      border-radius: 50px;
+      margin-top: 6px;
+    }
+    .price-body {
+      padding: 20px 16px;
+    }
+    .price-amount {
+      font-size: 0.85rem;
+      color: var(--text-lt);
+      font-weight: 500;
+    }
+    .price-note {
+      font-size: 0.8rem;
+      color: var(--text-lt);
+      margin-top: 8px;
+    }
+
+    /* ── Gallery ────────────────────────────── */
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      aspect-ratio: 4/3;
       cursor: pointer;
     }
-    .image-gallery img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s;
     }
-    .location ul {
+    .gallery-item:hover img { transform: scale(1.07); }
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(145,108,65,0);
+      display: flex;
+      align-items: flex-end;
+      padding: 16px;
+      transition: background 0.3s;
+    }
+    .gallery-item:hover .gallery-overlay { background: rgba(145,108,65,0.35); }
+    .gallery-caption {
+      color: var(--white);
+      font-size: 0.85rem;
+      font-weight: 600;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    .gallery-item:hover .gallery-caption { opacity: 1; transform: translateY(0); }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.88);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 85vh;
+      border-radius: 10px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 2.2rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    /* ── Location ───────────────────────────── */
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+    .location-list {
       list-style: none;
       padding: 0;
-      line-height: 1.8;
-      font-size: 18px;
     }
+    .location-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--tan-lt);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .location-list li:last-child { border-bottom: none; }
+    .loc-icon {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .loc-label { font-weight: 600; color: var(--text); }
+    .loc-detail { font-size: 0.82rem; color: var(--text-lt); display: block; }
     iframe {
       width: 100%;
-      height: 250px;
+      height: 320px;
       border: 0;
-      border-radius: 12px;
-      margin-top: 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
+
+    /* ── Testimonials ───────────────────────── */
     .testimonials {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
     }
     .testimonial {
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: inset 0 2px 4px rgba(0,0,0,0.05), 0 4px 8px rgba(0,0,0,0.05);
+      background: var(--white);
+      padding: 28px 24px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+    .testimonial::before {
+      content: '\201C';
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      color: var(--tan);
+      position: absolute;
+      top: -10px;
+      left: 16px;
+      line-height: 1;
+    }
+    .testimonial p {
       font-style: italic;
-      color: #3C403D;
+      color: var(--text);
+      font-size: 0.95rem;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 16px;
     }
-    .contact {
-      background: #DCC7AA;
+    .stars { color: #f0a500; font-size: 0.9rem; margin-bottom: 8px; }
+    .t-author { font-weight: 600; font-size: 0.88rem; color: var(--brown); }
+
+    /* ── Contact ────────────────────────────── */
+    .contact-section {
+      background: var(--tan);
+      border-radius: 20px;
+      margin: 0 16px 64px;
+      padding: 52px 32px;
       text-align: center;
-      padding: 40px 20px;
-      border-radius: 12px;
-      margin: 40px auto;
+      max-width: 1060px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    .contact h2 {
-      margin-top: 0;
+    .contact-section .section-title { color: var(--brown); }
+    .contact-section p { color: var(--text); margin-bottom: 30px; }
+    .contact-methods {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 28px;
     }
-    .contact a {
-      display: inline-block;
-      margin: 10px 15px;
+    .contact-method {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--white);
+      padding: 14px 22px;
+      border-radius: 50px;
+      box-shadow: var(--shadow);
       text-decoration: none;
-      font-weight: bold;
-      color: #916C41;
-      font-size: 18px;
-      transition: color 0.3s ease;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
-    .contact a:hover {
-      color: #7a5a31;
-    }
-    .contact button {
-      background: #916C41;
+    .contact-method:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
+    .contact-method span { font-size: 1.3rem; }
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #25D366;
+      color: var(--white);
+      padding: 14px 32px;
+      border-radius: 50px;
       border: none;
-      padding: 12px 24px;
-      border-radius: 24px;
-      color: white;
-      font-size: 16px;
+      font-size: 1rem;
+      font-weight: 700;
       cursor: pointer;
-      font-weight: bold;
-      letter-spacing: 0.5px;
-      transition: background 0.3s ease, transform 0.3s ease;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      text-decoration: none;
+      transition: background 0.3s, transform 0.2s;
+      box-shadow: 0 4px 12px rgba(37,211,102,0.3);
     }
-    .contact button:hover {
-      background: #7a5a31;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    }
+    .whatsapp-btn:hover { background: #1da855; transform: translateY(-2px); }
+
+    /* ── Footer ─────────────────────────────── */
     footer {
-      background: #916C41;
-      color: white;
+      background: var(--brown);
+      color: rgba(255,255,255,0.85);
       text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      font-size: 14px;
+      padding: 28px 20px;
+      font-size: 0.88rem;
+    }
+    footer strong { color: var(--white); }
+
+    /* ── Responsive ─────────────────────────── */
+    @media (max-width: 700px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 58px;
+        left: 0; right: 0;
+        background: var(--cream);
+        border-bottom: 1px solid var(--tan);
+        padding: 16px 24px 20px;
+        gap: 16px;
+        z-index: 99;
+      }
+      .nav-hamburger { display: flex; }
+      .hero-content { padding: 28px 20px; }
+      .location-grid { grid-template-columns: 1fr; }
+      .stats-bar { flex-direction: row; }
+      .stat-item { min-width: 110px; padding: 16px 8px; }
+      .contact-section { margin: 0 12px 48px; padding: 36px 20px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; animation: none !important; }
     }
   </style>
 </head>
 <body>
- 
+
+  <!-- ── Sticky Nav ── -->
+  <nav>
+    <a href="#" class="nav-brand">Sravani Girls Hostel & PG</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#amenities">Amenities</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#location">Location</a></li>
+      <li><a href="#contact" class="nav-cta">Book Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── Header ── -->
   <header>
     <h1>SRAVANI GIRLS HOSTEL & PG</h1>
-    <p>Comfort, Safety, and Affordability for Every Guest</p>
+    <p>Comfort · Safety · Affordability · Nacharam, Hyderabad</p>
+    <span class="header-badge">Women-Only Accommodation</span>
   </header>
- 
-  <section class="location">
-    <h2>Location Highlights</h2>
-    <p style="text-align: center; margin-bottom: 20px;">
-      Our prime location offers convenience for daily travel and access to essential services.
-    </p>
-    <ul>
-      <li>📍 Located just 30 meters from HMT Nagar Bus Stop</li>
 
- <li>🚇 Close to Habsiguda Metro Station</li> <!-- Metro -->
-  <li>🛍️ Nearby Valuezone & Trends shopping malls</li> <!-- Shopping -->
-  <li>🌳 HMT Nagar park within 200 meters</li> <!-- Park -->
-  <li>🎓 Nearby Saint Pious X Degree, PG and MBA College For Women</li> <!-- College -->
-  <li>🏛️ Nearby Centre for Cellular & Molecular Biology, Habsiguda, Uppal Road, Hyderabad - 500 007, Telangana, India,</li> <!-- Research Institute -->
-  <li>🏛️ Nearby CSIR-Indian Institute of Chemical Technology - Hyderabad</li> <!-- Research Institute -->
-  <li>🎓 Nearby GEETHANJALI WOMEN'S COLLEGE JUNIOR & DEGREE</li> <!-- College -->
-  <li>🎓 Silver Jubilee Degree College for Women</li> <!-- College -->
-  <li>🎓 St.Ann's Degree & PG College for Women, Mallapur</li> <!-- College -->
-  <li>🏛️ CSIR – National Geophysical Research Institute (NGRI)</li> <!-- Research Institute -->
-  <li> Aragen Life Sciences</li> <!-- Research Institute -->
-  <li> Nearby Genpact , 4-45, IDA Uppal, NGRI, Habsiguda, Hyderabad, Telangana 500007 </li> <!-- Office -->
-  <li>Nearby HMT Nagar Bus Stop, Nacharam </li> <!-- Bustop -->
-  <li>Nearby Shree pooja Hospital, Street Number 1, above om dental clinic, Bapuji Nagar, Andrabank lane, HMT Nagar, Nacharam, Hyderabad, Telangana 500076</li> <!-- Hospital -->
-  <li> Nearby Bapuji Hospital,Street No. 2, Bapuji Nagar, MBD Complex, HMT Nagar, Nacharam, Hyderabad, Telangana 500076</li> <!-- Hospitality-->      
-  <li>🏥 Bapuji Nagar, MBD Complex, HMT Nagar, Nacharam, Hyderabad, Telangana 500076</li>
-    </ul>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.762229929963!2d78.5467688!3d17.4231947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99f58a5a6323%3A0x7cd8e98b11043b2a!2sSravani%20Girls%20Hostel%20%26%20PG!5e0!3m2!1sen!2sin!4v1757401203559!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </section>
- 
+  <!-- ── Hero ── -->
   <div class="hero">
     <div class="hero-content">
-      <h2>Find Your Safe & Comfortable Space in Hyderabad</h2>
-      <p>Sravani Girls Hostel offers hygienic food, modern amenities, and budget-friendly rooms designed for students and working professionals.</p>
-      <a href="#rooms" class="cta-button">View Rooms</a>
+      <p class="hero-eyebrow">Nacharam · HMT Nagar · Hyderabad</p>
+      <h2>Your Safe &amp; Comfortable <em>Home Away From Home</em></h2>
+      <p>Hygienic food, modern amenities, and budget-friendly rooms for women students and working professionals.</p>
+      <div class="hero-actions">
+        <a href="#amenities" class="btn-primary">Explore Amenities</a>
+        <a href="#contact" class="btn-secondary">Contact Us</a>
+      </div>
     </div>
   </div>
- 
-  <section id="rooms">
-    <h2>Why Choose Us?</h2>
+
+  <!-- ── Stats Bar ── -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <span class="stat-num">24/7</span>
+      <span class="stat-label">Water & CCTV Security</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">4</span>
+      <span class="stat-label">Room Sharing Options</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">30m</span>
+      <span class="stat-label">From Bus Stop</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">100%</span>
+      <span class="stat-label">Women-Only & Safe</span>
+    </div>
+  </div>
+
+  <!-- ── Amenities ── -->
+  <section id="amenities">
+    <h2 class="section-title">Why Choose Sravani?</h2>
+    <div class="divider"></div>
+    <p class="section-sub">Everything you need for a comfortable, worry-free stay.</p>
     <div class="features">
-      <div class="feature">✅ Daywise Accommodation Available</div>
-      <div class="feature">🍽️ Hygienic Homely Food</div>
-      <div class="feature">🫓 Chapathis Served Daily</div>
-      <div class="feature">🚿 24/7 Water Facility & CCTV</div>
-      <div class="feature">🔥 Free Hot Water</div>
-      <div class="feature">📶 Free High Speed Wi-Fi</div>
-      <div class="feature">🧺 Washing Machine Facility</div>
-      <div class="feature">🛏️ 2, 3, 4 & 5 Sharing Rooms</div>
-      <div class="feature">💰 Budget Friendly Rent</div>
+      <div class="feature"><span class="feat-icon">🛏️</span>2, 3, 4 &amp; 5 Sharing Rooms</div>
+      <div class="feature"><span class="feat-icon">📅</span>Day-wise Accommodation</div>
+      <div class="feature"><span class="feat-icon">🍽️</span>Hygienic Homely Food</div>
+      <div class="feature"><span class="feat-icon">🫓</span>Chapathis Served Daily</div>
+      <div class="feature"><span class="feat-icon">🚿</span>24/7 Water Supply</div>
+      <div class="feature"><span class="feat-icon">🔥</span>Free Hot Water (Geyser)</div>
+      <div class="feature"><span class="feat-icon">📶</span>Free High-Speed Wi-Fi</div>
+      <div class="feature"><span class="feat-icon">📷</span>CCTV Security</div>
+      <div class="feature"><span class="feat-icon">🧺</span>Washing Machine Facility</div>
+      <div class="feature"><span class="feat-icon">💧</span>Aquaguard Water Purifier</div>
+      <div class="feature"><span class="feat-icon">💰</span>Budget-Friendly Rent</div>
+      <div class="feature"><span class="feat-icon">🔒</span>Women-Only &amp; Secure</div>
     </div>
   </section>
- 
-  <section>
-    <h2>Our Rooms & Facilities</h2>
+
+  <!-- ── Pricing ── -->
+  <section id="pricing" style="background: var(--tan-lt); max-width:100%; padding: 64px 20px;">
+    <div style="max-width:1060px; margin:auto;">
+      <h2 class="section-title">Room Options</h2>
+      <div class="divider"></div>
+      <p class="section-sub">Choose the sharing option that suits you best. All rooms include food, Wi-Fi, and utilities.</p>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="price-header">
+            <div class="price-type">2 Sharing</div>
+          </div>
+          <div class="price-body">
+            <div class="price-amount">More space &amp; privacy</div>
+            <div class="price-note">Ideal for working professionals</div>
+          </div>
+        </div>
+        <div class="price-card popular">
+          <div class="price-header">
+            <div class="price-type">3 Sharing</div>
+            <div class="popular-badge">Most Popular</div>
+          </div>
+          <div class="price-body">
+            <div class="price-amount">Best value for students</div>
+            <div class="price-note">Great community feel</div>
+          </div>
+        </div>
+        <div class="price-card">
+          <div class="price-header">
+            <div class="price-type">4 Sharing</div>
+          </div>
+          <div class="price-body">
+            <div class="price-amount">Budget-friendly option</div>
+            <div class="price-note">Perfect for groups</div>
+          </div>
+        </div>
+        <div class="price-card">
+          <div class="price-header">
+            <div class="price-type">5 Sharing</div>
+          </div>
+          <div class="price-body">
+            <div class="price-amount">Most affordable</div>
+            <div class="price-note">Day-wise also available</div>
+          </div>
+        </div>
+      </div>
+      <p style="text-align:center; margin-top:28px; color:var(--text-lt); font-size:0.9rem;">
+        📞 Contact us directly for current pricing and availability.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Gallery ── -->
+  <section id="gallery">
+    <h2 class="section-title">Our Rooms &amp; Facilities</h2>
+    <div class="divider"></div>
+    <p class="section-sub">Clean, well-maintained spaces designed for your comfort.</p>
     <div class="image-gallery">
-      <img src="https://lh3.googleusercontent.com/p/AF1QipNWJh0tOcA6Z3CyiAth0t4W9yJInTMmplVrU9P0=s1360-w1360-h1020-rw" alt="Hostel Facilities" />
-      <img src="https://lh3.googleusercontent.com/p/AF1QipO3D-nj3FuTMTGLIAU-Z_w_YEiOSWJHU_Z_Xg2n=s1360-w1360-h1020-rw" alt="Drinking hot & cold water" />
-      <img src="https://lh3.googleusercontent.com/p/AF1QipMGaQFYO4dBre6MXVgYkrj_cICP_8AqOzagGEO1=s1360-w1360-h1020-rw" alt="Geyser" />
-      <img src="https://lh3.googleusercontent.com/p/AF1QipPCZ3KbbfGT6qPelLTpHjZMPI-UOxWFrKpzADoA=s1360-w1360-h1020-rw" alt="Dedicated Aquaguard Water Purifier" />
-      <img src="https://lh3.googleusercontent.com/p/AF1QipMqaygS8sTVawHVcnWxQtc0D6iAEQi0PCl3VMVm=s1360-w1360-h1020-rw" alt="A well-lit, clean hostel room with a bed and a study desk." />
-      <img src="https://lh3.googleusercontent.com/p/AF1QipPzhmqFhUqfJOQLkQnT5PByqajj98jTSw-P83wG=s1360-w1360-h1020-rw" alt="A well-lit, clean hostel room with a bed and a study desk." />
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://lh3.googleusercontent.com/p/AF1QipNWJh0tOcA6Z3CyiAth0t4W9yJInTMmplVrU9P0=s1360-w1360-h1020-rw" alt="Hostel Facilities" loading="lazy" />
+        <div class="gallery-overlay"><span class="gallery-caption">Hostel Facilities</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://lh3.googleusercontent.com/p/AF1QipO3D-nj3FuTMTGLIAU-Z_w_YEiOSWJHU_Z_Xg2n=s1360-w1360-h1020-rw" alt="Drinking Hot & Cold Water" loading="lazy" />
+        <div class="gallery-overlay"><span class="gallery-caption">Hot &amp; Cold Water Dispenser</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://lh3.googleusercontent.com/p/AF1QipMGaQFYO4dBre6MXVgYkrj_cICP_8AqOzagGEO1=s1360-w1360-h1020-rw" alt="Geyser" loading="lazy" />
+        <div class="gallery-overlay"><span class="gallery-caption">Free Hot Water Geyser</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://lh3.googleusercontent.com/p/AF1QipPCZ3KbbfGT6qPelLTpHjZMPI-UOxWFrKpzADoA=s1360-w1360-h1020-rw" alt="Aquaguard Water Purifier" loading="lazy" />
+        <div class="gallery-overlay"><span class="gallery-caption">Dedicated Aquaguard Water Purifier</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://lh3.googleusercontent.com/p/AF1QipMqaygS8sTVawHVcnWxQtc0D6iAEQi0PCl3VMVm=s1360-w1360-h1020-rw" alt="Clean Hostel Room" loading="lazy" />
+        <div class="gallery-overlay"><span class="gallery-caption">Clean, Well-Lit Room</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://lh3.googleusercontent.com/p/AF1QipPzhmqFhUqfJOQLkQnT5PByqajj98jTSw-P83wG=s1360-w1360-h1020-rw" alt="Study Area" loading="lazy" />
+        <div class="gallery-overlay"><span class="gallery-caption">Room with Study Desk</span></div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">×</button>
+    <img id="lightbox-img" src="" alt="Gallery image" />
+  </div>
 
-      
+  <!-- ── Testimonials ── -->
+  <section style="background: var(--tan-lt); max-width:100%; padding: 64px 20px;">
+    <div style="max-width:1060px; margin:auto;">
+      <h2 class="section-title">What Our Residents Say</h2>
+      <div class="divider"></div>
+      <div class="testimonials">
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <p>"Feels like home! Food is great — especially the chapathis — and rooms are always clean. I highly recommend Sravani Girls Hostel for students and working professionals looking for a safe and comfortable stay."</p>
+          <div class="t-author">— Student Resident</div>
+        </div>
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <p>"Safe and budget-friendly, perfect for students. The staff is very cooperative and all facilities are well-maintained. The location is also very convenient for daily commute."</p>
+          <div class="t-author">— Working Professional</div>
+        </div>
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <p>"Friendly staff and a very convenient location. I have been staying here for a year and am very happy with the service and amenities provided. It's a great place to live!"</p>
+          <div class="t-author">— Long-term Resident</div>
+        </div>
+      </div>
     </div>
   </section>
-  
-  <section>
-    <h2>What Our Residents Say</h2>
-    <div class="testimonials">
-      <div class="testimonial">“Feels like home! Food is great, especially chapathis and rooms are clean. I highly recommend Sravani Girls Hostel for students and working professionals looking for a safe and comfortable stay.”</div>
-      <div class="testimonial">“Safe and budget-friendly, perfect for students. The staff is very cooperative and all facilities are well-maintained. The location is also very convenient.”</div>
-      <div class="testimonial">“Friendly staff and very convenient location. I have been staying here for a year and am very happy with the service and amenities provided. It's a great place to live.”</div>
+
+  <!-- ── Location ── -->
+  <section id="location">
+    <h2 class="section-title">Location &amp; Nearby Landmarks</h2>
+    <div class="divider"></div>
+    <p class="section-sub">Perfectly situated in HMT Nagar, Nacharam — well connected and close to everything you need.</p>
+    <div class="location-grid">
+      <ul class="location-list">
+        <li>
+          <span class="loc-icon">🚌</span>
+          <div>
+            <span class="loc-label">HMT Nagar Bus Stop</span>
+            <span class="loc-detail">Just 30 metres away — Nacharam</span>
+          </div>
+        </li>
+        <li>
+          <span class="loc-icon">🚇</span>
+          <div>
+            <span class="loc-label">Habsiguda Metro Station</span>
+            <span class="loc-detail">Quick access to Hyderabad Metro Rail</span>
+          </div>
+        </li>
+        <li>
+          <span class="loc-icon">🛍️</span>
+          <div>
+            <span class="loc-label">Shopping Malls</span>
+            <span class="loc-detail">Valuezone &amp; Trends malls nearby</span>
+          </div>
+        </li>
+        <li>
+          <span class="loc-icon">🌳</span>
+          <div>
+            <span class="loc-label">HMT Nagar Park</span>
+            <span class="loc-detail">Within 200 metres — great for walks</span>
+          </div>
+        </li>
+        <li>
+          <span class="loc-icon">🎓</span>
+          <div>
+            <span class="loc-label">Saint Pious X Degree, PG &amp; MBA College for Women</span>
+            <span class="loc-detail">Women's college nearby</span>
+          </div>
+        </li>
+        <li>
+          <span class="loc-icon">🎓</span>
+          <div>
+            <span class="loc-label">Geethanjali Women's College</span>
+            <span class="loc-detail">Junior &amp; Degree college nearby</span>
+          </div>
+        </li>
+        <li>
+          <span class="loc-icon">🎓</span>
+          <div>
+            <span class="loc-label">Silver Jubilee Degree College for Women</span>
+            <span class="loc-detail">Nearby women's college</span>
+          </div>
+        </li>
+        <li>
+          <span class="loc-icon">🎓</span>
+          <div>
+            <span class="loc-label">St. Ann's Degree &amp; PG College for Women</span>
+            <span class="loc-detail">Mallapur — women's college nearby</span>
+          </div>
+        </li>
+        <li>
+          <span class="loc-icon">🏛️</span>
+          <div>
+            <span class="loc-label">CCMB – Centre for Cellular &amp; Molecular Biology</span>
+            <span class="loc-detail">Habsiguda, Uppal Road</span>
+          </div>
+        </li>
+        <li>
+          <span class="loc-icon">🏛️</span>
+          <div>
+            <span class="loc-label">CSIR-IICT – Indian Institute of Chemical Technology</span>
+            <span class="loc-detail">Hyderabad — research institute nearby</span>
+          </div>
+        </li>
+        <li>
+          <span class="loc-icon">🏛️</span>
+          <div>
+            <span class="loc-label">CSIR-NGRI – National Geophysical Research Institute</span>
+            <span class="loc-detail">Research institute nearby</span>
+          </div>
+        </li>
+        <li>
+          <span class="loc-icon">🔬</span>
+          <div>
+            <span class="loc-label">Aragen Life Sciences</span>
+            <span class="loc-detail">Pharmaceutical research facility nearby</span>
+          </div>
+        </li>
+        <li>
+          <span class="loc-icon">🏢</span>
+          <div>
+            <span class="loc-label">Genpact Office</span>
+            <span class="loc-detail">IDA Uppal, NGRI, Habsiguda</span>
+          </div>
+        </li>
+        <li>
+          <span class="loc-icon">🏥</span>
+          <div>
+            <span class="loc-label">Shree Pooja Hospital</span>
+            <span class="loc-detail">HMT Nagar, Nacharam, Hyderabad</span>
+          </div>
+        </li>
+        <li>
+          <span class="loc-icon">🏥</span>
+          <div>
+            <span class="loc-label">Bapuji Hospital</span>
+            <span class="loc-detail">MBD Complex, HMT Nagar, Nacharam</span>
+          </div>
+        </li>
+      </ul>
+      <div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.762229929963!2d78.5467688!3d17.4231947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99f58a5a6323%3A0x7cd8e98b11043b2a!2sSravani%20Girls%20Hostel%20%26%20PG!5e0!3m2!1sen!2sin!4v1757401203559!5m2!1sen!2sin"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Sravani Girls Hostel location map">
+        </iframe>
+        <p style="text-align:center; margin-top:14px; font-size:0.88rem; color:var(--text-lt);">
+          📍 Bapuji Nagar, HMT Nagar, Nacharam, Hyderabad – 500076
+        </p>
+      </div>
     </div>
   </section>
- 
-  <section class="contact">
-    <h2>Get in Touch</h2>
-    <p>We’d love to hear from you! Call us for details or WhatsApp us directly to book your spot.</p>
-    <a href="tel:8520978852">📞 +918520978852</a>
-    <a href="tel:7893305330">📞 +917893305330</a>
-    <div style="margin-top:20px;">
-      <button onclick="window.location.href='https://wa.me/7893305330'">WhatsApp Us</button>
+
+  <!-- ── Contact ── -->
+  <section id="contact" style="padding: 0 20px 64px;">
+    <div class="contact-section">
+      <h2 class="section-title">Ready to Book Your Spot?</h2>
+      <div class="divider"></div>
+      <p>Call us or WhatsApp directly — we'll be happy to help you find the right room.</p>
+      <div class="contact-methods">
+        <a href="tel:8520978852" class="contact-method">
+          <span>📞</span> +91 85209 78852
+        </a>
+        <a href="tel:7893305330" class="contact-method">
+          <span>📞</span> +91 78933 05330
+        </a>
+      </div>
+      <a href="https://wa.me/917893305330" class="whatsapp-btn">
+        <svg width="22" height="22" viewBox="0 0 32 32" fill="white" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 3C9 3 3 9 3 16c0 2.3.6 4.5 1.8 6.4L3 29l6.8-1.8C11.5 28.4 13.7 29 16 29c7 0 13-6 13-13S23 3 16 3zm6.4 18.4c-.3.8-1.5 1.5-2.1 1.6-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-5-4.3-5.1-4.5-.2-.2-1.3-1.7-1.3-3.3 0-1.5.8-2.3 1.1-2.6.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 2c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3-.1.5.4.7.9 1.3 1.5 1.8.7.6 1.4 1 2.1 1.2.2.1.4 0 .5-.1l.6-.7c.1-.2.4-.3.6-.2l2 .9c.2.1.4.2.4.4v.1z"/>
+        </svg>
+        WhatsApp Us
+      </a>
     </div>
   </section>
- 
+
+  <!-- ── Footer ── -->
   <footer>
-    <p>© 2025 Sravani Girls Hostel & PG | Nacharam, Hyderabad</p>
+    <p><strong>© 2025 Sravani Girls Hostel &amp; PG</strong> — Bapuji Nagar, HMT Nagar, Nacharam, Hyderabad – 500076</p>
+    <p style="margin-top:6px; opacity:0.7;">Women-Only Accommodation · Students &amp; Working Professionals Welcome</p>
   </footer>
- 
+
+  <!-- ── Scripts ── -->
+  <script>
+    // Mobile nav toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+    // Close nav on link click
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // Lightbox
+    function openLightbox(el) {
+      const src = el.querySelector('img').src;
+      const alt = el.querySelector('img').alt;
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox-img').alt = alt;
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
 </body>
 </html>
